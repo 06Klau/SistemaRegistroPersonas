@@ -1,0 +1,356 @@
+/* line 3, ../sass/default.scss */
+body {
+  margin: 0px;
+  width: 100%;
+  min-height: 800px;
+  background-color: white;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FFFFFFFF', endColorstr='#FFFFF6DD');
+  background-image: -webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #fff6dd));
+  background-image: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #fff6dd 100%);
+  background-image: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #fff6dd 100%);
+  background-image: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #fff6dd 100%);
+  background-image: radial-gradient(center, ellipse cover, #ffffff 0%, #fff6dd 100%);
+  font-size: 16px;
+}
+
+/* line 14, ../sass/default.scss */
+h1 {
+  font-family: helvetica, arial;
+  font-size: 1.375em;
+  color: #d19800;
+  font-weight: 100;
+  text-align: center;
+}
+
+/* line 17, ../sass/default.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 21, ../sass/default.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 24, ../sass/default.scss */
+.clearfix {
+  zoom: 1;
+  /* IE6&7*/
+}
+
+/* line 28, ../sass/default.scss */
+.expand {
+  width: 100%;
+}
+/* line 29, ../sass/default.scss */
+.expand hr {
+  height: 6px;
+  background-color: #d19800;
+}
+
+/* line 32, ../sass/default.scss */
+.logo {
+  margin-top: 36px;
+  display: block;
+}
+
+/* line 34, ../sass/default.scss */
+.login {
+  margin: 0 auto;
+  max-width: 227px;
+}
+/* line 35, ../sass/default.scss */
+.login label {
+  font-family: arial, helvetica;
+  font-weight: 100;
+  color: #d19800;
+  font-size: 1.031em;
+  padding: 10px 0px;
+  float: left;
+}
+/* line 36, ../sass/default.scss */
+.login input {
+  height: 43px;
+  background-color: #fff;
+  border-color: #135351;
+  border: 1px solid;
+  width: 225px;
+  padding: 10px;
+  color: #666;
+}
+/* line 45, ../sass/default.scss */
+.login button {
+  width: 135px;
+  height: 43px;
+  background-color: #135351;
+  border-color: #043634;
+  border: 1px solid;
+  color: #fff;
+  font-size: 1em;
+  margin-top: 21px;
+  float: right;
+}
+/* line 56, ../sass/default.scss */
+.login a {
+  font-family: helvetica, arial;
+  color: #666;
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+
+/* line 61, ../sass/default.scss */
+.rounded {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 65, ../sass/default.scss */
+.navbar {
+  background-color: #ffecbf;
+}
+/* line 67, ../sass/default.scss */
+.navbar ul {
+  list-style: none;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 100%;
+}
+/* line 74, ../sass/default.scss */
+.navbar ul li {
+  float: left;
+}
+/* line 76, ../sass/default.scss */
+.navbar ul li a {
+  color: #d19800;
+  font-family: helvetica, arial;
+  font-size: 13px;
+  line-height: 34px;
+}
+/* line 81, ../sass/default.scss */
+.navbar ul li a img {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* line 91, ../sass/default.scss */
+.content {
+  background: #fff;
+  border: 1px solid #d19800;
+  margin-top: 20px;
+  padding: 15px 0px;
+  margin-bottom: 20px;
+}
+/* line 97, ../sass/default.scss */
+.content h1 {
+  color: #135351;
+  font-weight: bold;
+  padding: 0 10px;
+}
+/* line 102, ../sass/default.scss */
+.content label {
+  font-family: helvetica, arial;
+  font-size: 14px;
+  color: #d19800;
+  float: left;
+  font-weight: 100;
+  margin-right: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 105, ../sass/default.scss */
+.content input {
+  height: 43px;
+  background-color: #fff;
+  border: 1px solid #d19800;
+  width: 100%;
+  padding: 10px;
+  float: left;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #a9a9ae;
+}
+/* line 116, ../sass/default.scss */
+.content input.foto {
+  width: 50%;
+}
+/* line 119, ../sass/default.scss */
+.content input.busqueda {
+  width: 60%;
+}
+/* line 122, ../sass/default.scss */
+.content input.radiobutton {
+  width: 15%;
+}
+/* line 125, ../sass/default.scss */
+.content label.genero {
+  width: 30%;
+}
+/* line 129, ../sass/default.scss */
+.content .select_join {
+  border: 1px solid #d19800;
+  width: 100%;
+  height: 43px;
+  overflow: hidden;
+  background: url(../images/dropdown.gif) no-repeat right #fefefe;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 137, ../sass/default.scss */
+.content .select_join select {
+  background: transparent;
+  width: 105%;
+  font-size: 14px;
+  color: #a9a9a9;
+  border: 0;
+  border-radius: 0;
+  height: 41px;
+  -webkit-appearance: none;
+}
+/* line 148, ../sass/default.scss */
+.content .select_join select:focus {
+  outline: none;
+}
+/* line 152, ../sass/default.scss */
+.content button {
+  width: 135px;
+  height: 43px;
+  background-color: #135351;
+  border-color: #043634;
+  border: 1px solid;
+  color: #fff;
+  font-size: 1em;
+  margin-top: 21px;
+  float: right;
+  margin-right: 10px;
+}
+/* line 164, ../sass/default.scss */
+.content button.examinar {
+  margin: 0px;
+  background-color: #75ab0c;
+  width: 45%;
+}
+/* line 169, ../sass/default.scss */
+.content button.buscar {
+  margin: 0px;
+  background-color: #75ab0c;
+  width: 35%;
+}
+/* line 174, ../sass/default.scss */
+.content button.limpiar {
+  background-color: #ab0c1b;
+}
+/* line 178, ../sass/default.scss */
+.content table.results {
+  font-family: helvetica, arial;
+  font-size: 0.750em;
+  background-color: #ececec;
+}
+/* line 182, ../sass/default.scss */
+.content table.results tr.head {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+/* line 186, ../sass/default.scss */
+.content table.results tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+/* line 189, ../sass/default.scss */
+.content table.results a.edit {
+  background: url(../images/edit.png) no-repeat;
+  display: block;
+  text-indent: -9999px;
+  height: 19px;
+}
+/* line 195, ../sass/default.scss */
+.content table.results a.delete {
+  background: url(../images/delete.png) no-repeat;
+  display: block;
+  text-indent: -9999px;
+  height: 19px;
+  text-align: center;
+}
+
+/* line 205, ../sass/default.scss */
+.error-login {
+  color: #ff0000;
+  text-align: center;
+}
+
+/* line 210, ../sass/default.scss */
+.message-true {
+  color: #009323;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* line 225, ../sass/default.scss */
+  .logo {
+    margin-top: 20px;
+    display: block;
+  }
+
+  /* line 227, ../sass/default.scss */
+  .hidemobile {
+    display: none !important;
+  }
+
+  /* line 231, ../sass/default.scss */
+  .content {
+    background: #fff;
+    border: 1px solid #d19800;
+    margin-top: 20px;
+  }
+  /* line 235, ../sass/default.scss */
+  .content label {
+    font-family: helvetica, arial;
+    font-size: 14px;
+    color: #d19800;
+    float: left;
+    font-weight: 100;
+    margin-right: 10px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  /* line 238, ../sass/default.scss */
+  .content input {
+    height: 43px;
+    background-color: #fff;
+    border: 1px solid #d19800;
+    width: 100%;
+    padding: 10px;
+    float: left;
+    margin-bottom: 10px;
+  }
+  /* line 247, ../sass/default.scss */
+  .content button {
+    width: 45%;
+    height: 43px;
+    background-color: #135351;
+    border-color: #043634;
+    border: 1px solid;
+    color: #fff;
+    font-size: 1em;
+    margin-top: 21px;
+    float: right;
+  }
+  /* line 258, ../sass/default.scss */
+  .content button.limpiar {
+    background-color: #ab0c1b;
+    width: 45%;
+  }
+}
