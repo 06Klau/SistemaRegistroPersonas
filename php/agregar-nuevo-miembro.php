@@ -14,6 +14,7 @@ $documento = $_POST['documento'];
 $numdoc = $_POST['numdoc'];
 $direccion = $_POST['direccion'];
 $foto = $_POST['foto'];
+$membresia = 'Activo';
 
 
 //Insertar datos
@@ -27,9 +28,9 @@ if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais
 	$MySQLDate = date("Y-m-d", strtotime($Date));
 	$foto = $numdoc;
 
-	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Fotografia)
+	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Fotografia)
 				values 
-				('$nombre','$apellido1','$apellido2','$MySQLDate','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$foto')");
+				('$nombre','$apellido1','$apellido2','$MySQLDate','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$foto')");
 
 
 	header("Location: ../agregar-persona.php?message=true");
