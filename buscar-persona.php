@@ -58,7 +58,7 @@ include("php/session.php");
 					  <button class="rounded buscar" type='submit'>Buscar</button>
 				</form>
 			</div>
-			<div class="col-xs-12">
+			<div class="col-xs-12 results">
 			<div class="table-responsive">
 <?php
 
@@ -115,7 +115,9 @@ if ($row = mysql_fetch_array($result)){
 while ($row = mysql_fetch_array($result)); 
    echo "</table> \n"; 
 } else { 
-echo "¡ No se ha encontrado ningun registro !"; 
+
+echo '<div class="error-login">¡ No se ha encontrado ningun registro</div>'; 
+
 } 
 
 
