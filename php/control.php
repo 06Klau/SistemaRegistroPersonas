@@ -9,12 +9,12 @@ $password = $_POST['password'];
 
 function Conectarse(){
 
-	if(!($link=mysql_connect('localhost:8888','test','123456')))
+	if(!($link=mysql_connect('registromiembros.db.4684682.hostedresource.com','registromiembros','RegIASD7!')))
 	{
 		echo "Error conectando a la base de datos";
 		exit();
 	}
-	if(!mysql_select_db("registro_personas",$link))
+	if(!mysql_select_db("registromiembros",$link))
 	{
 		echo "Error seleccionando base de datos";
 		exit();
