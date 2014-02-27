@@ -44,7 +44,7 @@ include("php/session.php");
 		<div class="col-xs-12 rounded content clearfix">
 			<h1>Buscar Miembro de Iglesia</h1>
 			<div class="col-xs-12 clearfix">
-				<form id="buscar-per" name="buscar-per" method="post" action="">
+				<form id="buscar-per" name="buscar-per" method="post" action="php/realizar-consulta.php">
 					 <label class="clearfix" for='nombre'>Escriba el Nombre y apellido  de la persona que desea buscar:</label>
            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					 <input class="clearfix rounded" type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
@@ -60,34 +60,8 @@ include("php/session.php");
 			</div>
 			<div class="col-xs-12">
 			<div class="table-responsive">
-<?php
-
-function Conectarse(){
-
-  if(!($link=mysql_connect('registromiembros.db.4684682.hostedresource.com','registromiembros','RegIASD7!')))
-  {
-    echo "Error conectando a la base de datos";
-    exit();
-  }
-  if(!mysql_select_db("registromiembros",$link))
-  {
-    echo "Error seleccionando base de datos";
-    exit();
-  }
-  return $link;
-}
-
-$con = Conectarse();
-
-$nombre = $_POST['nombre'];
-$apellido1 = $_POST['apellido1'];
-$apellido2 = $_POST['apellido2'];
-
-$result = mysql_query("SELECT * FROM agregar_miembro WHERE Nombre = '".$nombre."' Or Apellido_1 = '".$apellido1."' Or Apellido_2 = '".$apellido2."' ", $con);
-
-if ($row = mysql_fetch_array($result)){ 
-   echo '<table class="table results" border="0" cellspacing="0" cellpadding="0">'; 
-   echo '<tr class="head">
+				<table class="table results" border="0" cellspacing="0" cellpadding="0">
+  <tr class="head">
     <td>Nombre</td>
     <td>Primer Apellido</td>
     <td class="hidemobile">Segundo Apellido</td>
@@ -97,32 +71,30 @@ if ($row = mysql_fetch_array($result)){
     <td class="hidemobile">Estado de Membresía</td>
     <td>Editar</td>
     <td>Eliminar</td>
-  </tr>'; 
-   do { 
-      echo "<tr><td>".$row["Nombre"]."</td><td>".$row["Apellido_1"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Apellido_2"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Nacionalidad"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Estado_Civil"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Numero_Doc"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Estado_Membresia"].""; 
-      echo '</td><td><a class="edit" href="#">Edit</a></td><td><a class="delete" href="#">delete</a></td></tr>';
-   } 
-while ($row = mysql_fetch_array($result)); 
-   echo "</table> \n"; 
-} else { 
-echo "¡ No se ha encontrado ningun registro !"; 
-} 
-
-
-?>
-
-      
-				
+  </tr>
+  <tr>
+    <td>Rodrigo</td>
+    <td>Ovares</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td><a class="edit" href="#">Edit</a></td>
+    <td><a class="delete" href="#">delete</a></td>
+  </tr>
+  <tr>
+    <td>Carlos</td>
+    <td>Ovares</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+    <td class="hidemobile">Ejemplo</td>
+   <td><a class="edit" href="#">Edit</a></td>
+    <td><a class="delete" href="#">delete</a></td>
+  </tr>
+</table>
 </div>
 			</div>
 		</div>

@@ -296,25 +296,30 @@ h1 {
   text-align: center;
 }
 
+/* line 215, ../sass/default.scss */
+.results {
+  margin: 20px 0px;
+}
+
 @media (max-width: 768px) {
-  /* line 225, ../sass/default.scss */
+  /* line 227, ../sass/default.scss */
   .logo {
     margin-top: 20px;
     display: block;
   }
 
-  /* line 227, ../sass/default.scss */
+  /* line 229, ../sass/default.scss */
   .hidemobile {
     display: none !important;
   }
 
-  /* line 231, ../sass/default.scss */
+  /* line 233, ../sass/default.scss */
   .content {
     background: #fff;
     border: 1px solid #d19800;
     margin-top: 20px;
   }
-  /* line 235, ../sass/default.scss */
+  /* line 237, ../sass/default.scss */
   .content label {
     font-family: helvetica, arial;
     font-size: 14px;
@@ -326,7 +331,7 @@ h1 {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  /* line 238, ../sass/default.scss */
+  /* line 240, ../sass/default.scss */
   .content input {
     height: 43px;
     background-color: #fff;
@@ -336,7 +341,7 @@ h1 {
     float: left;
     margin-bottom: 10px;
   }
-  /* line 247, ../sass/default.scss */
+  /* line 249, ../sass/default.scss */
   .content button {
     width: 45%;
     height: 43px;
@@ -348,7 +353,7 @@ h1 {
     margin-top: 21px;
     float: right;
   }
-  /* line 258, ../sass/default.scss */
+  /* line 260, ../sass/default.scss */
   .content button.limpiar {
     background-color: #ab0c1b;
     width: 45%;
