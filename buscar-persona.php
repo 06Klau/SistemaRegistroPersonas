@@ -43,15 +43,33 @@ include("php/session.php");
 	<div class="container-fluid clearfix ">
 		<div class="col-xs-12 rounded content clearfix">
 			<h1>Buscar Miembro de Iglesia</h1>
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 clearfix">
-				<form id="buscar-per" name="buscar-per" method="post" action="buscar-persona.php">
+			<div class="col-xs-12 clearfix">
+				<form id="buscar-per" name="buscar-per" method="post" action="php/realizar-consulta.php">
 					 <label class="clearfix" for='nombre'>Escriba el Nombre y apellido  de la persona que desea buscar:</label>
-					 <input class="clearfix rounded busqueda" type="nombre" name="nombre" id="nombre"/>
-					  <button class="rounded buscar" type='button'>Buscar</button>
+           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+					 <input class="clearfix rounded" type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
+           </div>
+           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+           <input class="clearfix rounded" type="text" name="apellido1" id="apellido1" placeholder="Primer Apellido" />
+           </div>
+           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+           <input class="clearfix rounded" type="text" name="apellido2" id="apellido2" placeholder="Segundo Apellido" />
+           </div>
+					  <button class="rounded buscar" type='submit'>Buscar</button>
 				</form>
 			</div>
 			<div class="col-xs-12">
 			<div class="table-responsive">
+<?php
+error_reporting(E_ALL ^ E_NOTICE); // Oculta todos los errores
+
+if($_GET["result"] == "true"){
+  echo "</table> \n"; 
+}
+else{}
+?>
+
+      
 				<table class="table results" border="0" cellspacing="0" cellpadding="0">
   <tr class="head">
     <td>Nombre</td>
