@@ -32,12 +32,7 @@ include("php/session.php");
 <div class="container">
 	<div class="container-fluid clearfix">
 		<div class="col-xs-12 rounded navbar">
-		<ul>
-			<li class="col-xs-12 col-sm-4 col-md-4 col-lg-3 row"><a href="agregar-persona.php"><img src="images/add-person-icon.gif"/>Agregar Miembro</a></li>
-      <li class="col-xs-12 col-sm-4 col-md-4 col-lg-3 row"><a href="buscar-persona.php"><img src="images/search-icon.gif"/>Buscar Miembro</a></li>
-      <li class="col-xs-12 col-sm-4 col-md-4 col-lg-3 row"><a href="#"><img src="images/report-icon.gif"/>Generar Reporte</a></li>
-      <li class="col-xs-12 col-sm-4 col-md-4 col-lg-3 row"><a href="php/salir.php"><img src="images/exit-icon.gif"/>Salir</a></li>
-		</ul>
+		<?php include 'php/menu.php'; ?>
 		</div>
 	</div>
 	<div class="container-fluid clearfix ">
@@ -60,6 +55,22 @@ include("php/session.php");
 			</div>
 			<div class="col-xs-12 results">
 			<div class="table-responsive">
+
+
+      <table class="table results" border="0" cellspacing="0" cellpadding="0"> 
+        <tr class="head">
+        <td>Nombre</td>
+        <td>Primer Apellido</td>
+        <td class="hidemobile">Segundo Apellido</td>
+        <td class="hidemobile">Nacionalidad</td>
+        <td class="hidemobile">Estado Civil</td>
+        <td class="hidemobile">Edad</td>
+        <td class="hidemobile">Estado de Membresía</td>
+        <td>Editar</td>
+        <td>Eliminar</td>
+        </tr>
+
+
 <?php
 
 function Conectarse(){
@@ -85,46 +96,32 @@ $apellido2 = $_POST['apellido2'];
 
 $result = mysql_query("SELECT * FROM agregar_miembro WHERE Nombre = '".$nombre."' Or Apellido_1 = '".$apellido1."' Or Apellido_2 = '".$apellido2."' ", $con);
 
-if ($row = mysql_fetch_array($result)){ 
-   echo '<table class="table results" border="0" cellspacing="0" cellpadding="0">'; 
-   echo '<tr class="head">
-    <td>Nombre</td>
-    <td>Primer Apellido</td>
-    <td class="hidemobile">Segundo Apellido</td>
-    <td class="hidemobile">Nacionalidad</td>
-    <td class="hidemobile">Estado Civil</td>
-    <td class="hidemobile"># de Documento</td>
-    <td class="hidemobile">Estado de Membresía</td>
-    <td>Editar</td>
-    <td>Eliminar</td>
-  </tr>'; 
-   do { 
-      echo "<tr><td>".$row["Nombre"]."</td><td>".$row["Apellido_1"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Apellido_2"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Nacionalidad"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Estado_Civil"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Numero_Doc"]."</td>";
-      echo '<td class="hidemobile">';
-      echo "".$row["Estado_Membresia"].""; 
-      echo '</td><td><a class="edit" href="#">Edit</a></td><td><a class="delete" href="#">delete</a></td></tr>';
-   } 
+if ($row = mysql_fetch_array($result)){
+   do { ?>
+
+   <tr>
+   <td><?php echo $row['Nombre']; ?></td>
+   <td><?php echo $row['Apellido_1']; ?></td>
+   <td><?php echo $row['Apellido_2']; ?></td>
+   <td><?php echo $row['Nacionalidad']; ?></td>
+   <td><?php echo $row['Estado_Civil']; ?></td>
+   <td><?php echo $row['Edad']; ?></td>
+   <td><?php echo $row['Estado_Membresia']; ?></td>
+   <td><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
+   <td><a class="delete" href="#">delete</a></td>
+
+<?php
+}
 while ($row = mysql_fetch_array($result)); 
    echo "</table> \n"; 
 } else { 
 
-echo '<div class="error-login">¡ No se ha encontrado ningun registro</div>'; 
+echo '<div class="error-login">¡ No se ha encontrado ningun registro 1</div>'; 
 
 } 
 
 
-?>
-
-      
-				
+?>				
 </div>
 			</div>
 		</div>

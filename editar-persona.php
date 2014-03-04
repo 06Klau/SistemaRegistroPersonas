@@ -1,5 +1,6 @@
 <?php
 include("php/session.php");
+include "php/config.php";
 ?>
 <!doctype html>
 <html>
@@ -19,6 +20,19 @@ include("php/session.php");
     }
   </style>
 <![endif]-->
+
+<?php
+$id=$_GET['id'];
+
+// Retrieve data from database 
+$sql="SELECT * FROM agregar_miembro WHERE id = '$id'";
+$result=mysql_query($sql);
+$rows=mysql_fetch_array($result);
+
+?>
+
+
+
 <body>
 <div class="container clearfix">
 	<div class="container-fluid ">
@@ -38,50 +52,56 @@ include("php/session.php");
 	</div>
 	<div class="container-fluid clearfix">
 		<div class="col-xs-12 rounded content">
-			<h1>Agregar Nuevo Miembro de Iglesia</h1>
-			<?php
-if($_GET["message"] == "true"){
-	echo '<div class="message-true">Miembro agregado correctamente<br/></div>';
-}
-else{}
-?>
+			<h1>Editar Nuevo Miembro de Iglesia 2</h1>
 			<form id="agregar-per" name="agregar-per" method="post" action="php/agregar-nuevo-miembro.php">
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='nombre'>Nombre:</label>
-				 <input class="clearfix rounded" type="nombre" name="nombre" id="nombre" placeholder="Nombre" required/>
+				 <input class="clearfix rounded" type="nombre" name="nombre" id="nombre" value="<?php echo $rows['Nombre']; ?>" />
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='apellido1'>Primer Apellido:</label>
-				 <input class="clearfix rounded" type="apellido1" name="apellido1" id="apellido1" placeholder="Primer Apellido" required/>
+				 <input class="clearfix rounded" type="apellido1" name="apellido1" id="apellido1" value="<?php echo $rows['Apellido_1']; ?>" />
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='apellido2'>Segundo Apellido:</label>
-				 <input class="clearfix rounded" type="apellido2" name="apellido2" id="apellido2" placeholder="Segundo Apellido" required/>
+				 <input class="clearfix rounded" type="apellido2" name="apellido2" id="apellido2" value="<?php echo $rows['Apellido_2']; ?>" />
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				 <label class="clearfix" for='fechanac'>Fecha de Nac.:</label>
+				 <input class="clearfix rounded" type="date" name="fechanac" id="fechanac" value="<?php echo $rows['DOB']; ?>" />
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-				 <label class="clearfix" for='fechanac'>Fecha de Nac.:</label>
-				 <input class="clearfix rounded" type="date" name="fechanac" id="fechanac" placeholder="DD/MM/YYYY" required/>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 						 <label class="clearfix" for='nacionalidad'>Nacionalidad:</label>
 					<div class="col-xs-12 select_join">
-						 <select name="pais" id="pais" required>
-						 <option value="">Selecciona...</option>
+						 <select name="pais" id="pais">
+						 <option value="<?php echo $rows['Nacionalidad']; ?>">Selecciona...</option>
 						 </select>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='genero'>Género:</label>
 				 <label class="clearfix genero" for='masculino'>Maculino:</label>
-				 <input class="radiobutton" name="genero" type="radio" value="Masculino"/>
+				 <input class="radiobutton" name="genero" type="radio" value="<?php echo $rows['Genero']; ?>"/>
 				 <label class="clearfix genero" for='femenino'>Femenino:</label>
-				 <input class="radiobutton" name="genero" type="radio" value="Femenino"/>
+				 <input class="radiobutton" name="genero" type="radio" value="<?php echo $rows['Genero']; ?>"/>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				 <label class="clearfix" for='estado-civil'>Estado de Membresía:</label>
+				<div class="select_join col-xs-12">
+					<select name="estadomembresia" id="estadomembresia" value="<?php echo $rows['Estado_Membresia']; ?>">
+						<option>Activo</option>
+						<option>Sancionado</option>
+						<option>Desfraternizado</option>
+						<option>Paradero Desconocido</option>
+						<option>Trasladado</option>
+					 </select>
+				</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='estado-civil'>Estado Civil:</label>
 				<div class="select_join col-xs-12">
-					<select name="estadocivil" id="estado-civil" required>
+					<select name="estadocivil" id="estado-civil">
 						<option>Soltero(a)</option>
 						<option>Casado(a)</option>
 						<option>Divorciado(a)</option>
@@ -92,7 +112,7 @@ else{}
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='tipo-doc'>Tipo de Documento:</label>
 				 <div class="select_join col-xs-12">
-					<select name="documento" id="documento" required>
+					<select name="documento" id="documento" value="<?php echo $rows['Tipo_Doc']; ?>">
 						<option value="Nac">Cédula Física</option>
 						<option value="Ext">Cédula de Residencia</option>
 						<option value="Menor">Menor de edad</option>
@@ -101,15 +121,15 @@ else{}
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='numero-doc'>Número de Doc.:</label>
-				 <input class="clearfix rounded" type="num-doc" name="numdoc" id="num-doc" placeholder="Número de Doc." required/>
+				 <input class="clearfix rounded" type="num-doc" name="numdoc" id="num-doc" value="<?php echo $rows['Numero_Doc']; ?>" />
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='direccion'>Dirección:</label>
-				 <input class="clearfix rounded" type="direccion" name="direccion" id="direccion" placeholder="Dirección" required/>
+				 <input class="clearfix rounded" type="direccion" name="direccion" id="direccion" value="<?php echo $rows['Direccion']; ?>" />
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='foto'>Fotografía:</label>
-				 <input class="clearfix rounded" type="file" name="foto" id="foto" required/>
+				 <input class="clearfix rounded" type="file" name="foto" id="foto" value="<?php echo $rows['Fotografia']; ?>" />
 				</div>
 				<button type="submit" name="guardar" id="guardar" class="rounded">Guardar</button>
 				<button class="rounded limpiar" type='button'>Limpiar</button>
@@ -134,8 +154,5 @@ $(document).ready(function()
 
  });
 </script>
-<?php
-include "php/config.php";
-?>
 </body>
 </html>

@@ -25,12 +25,26 @@ if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais
 	$nombre = ucfirst(strtolower( $nombre ) );
 	$apellido1 = ucfirst(strtolower( $apellido1 ) );
 	$apellido2 = ucfirst(strtolower( $apellido2 ) );
-	$MySQLDate = date("Y-m-d", strtotime($Date));
+	$MySQLDate = date("Y-m-d");
+	$DOB = date("Y-m-d", strtotime($Date));
 	$foto = $numdoc;
 
-	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Fotografia)
+	// Define la edad
+	$from = new DateTime($DOB);
+	$to   = new DateTime('today');
+	$edad = $from->diff($to)->y;
+
+	if($edad < 18){
+		$numdoc = 00000;
+	}
+	else{
+		$numdoc = $numdoc;
+	}
+
+
+	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Edad,Fotografia)
 				values 
-				('$nombre','$apellido1','$apellido2','$MySQLDate','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$foto')");
+				('$nombre','$apellido1','$apellido2','$DOB','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$edad','$foto')");
 
 
 	header("Location: ../agregar-persona.php?message=true");
