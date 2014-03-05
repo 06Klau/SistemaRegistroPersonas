@@ -102,11 +102,11 @@ if ($row = mysql_fetch_array($result)){
    <tr>
    <td><?php echo $row['Nombre']; ?></td>
    <td><?php echo $row['Apellido_1']; ?></td>
-   <td><?php echo $row['Apellido_2']; ?></td>
-   <td><?php echo $row['Nacionalidad']; ?></td>
-   <td><?php echo $row['Estado_Civil']; ?></td>
-   <td><?php echo $row['Edad']; ?></td>
-   <td><?php echo $row['Estado_Membresia']; ?></td>
+   <td class="hidemobile"><?php echo $row['Apellido_2']; ?></td>
+   <td class="hidemobile"><?php echo $row['Nacionalidad']; ?></td>
+   <td class="hidemobile"><?php echo $row['Estado_Civil']; ?></td>
+   <td class="hidemobile"><?php echo $row['Edad']; ?></td>
+   <td class="hidemobile"><?php echo $row['Estado_Membresia']; ?></td>
    <td><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
    <td><a class="delete" href="#">delete</a></td>
 
