@@ -42,9 +42,9 @@ if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais
 	}
 
 
-	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Edad,Fotografia)
+	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Fotografia)
 				values 
-				('$nombre','$apellido1','$apellido2','$DOB','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$edad','$foto')");
+				('$nombre','$apellido1','$apellido2','$DOB','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$foto')");
 
 
 	header("Location: ../agregar-persona.php?message=true");

@@ -105,7 +105,18 @@ if ($row = mysql_fetch_array($result)){
    <td class="hidemobile"><?php echo $row['Apellido_2']; ?></td>
    <td class="hidemobile"><?php echo $row['Nacionalidad']; ?></td>
    <td class="hidemobile"><?php echo $row['Estado_Civil']; ?></td>
-   <td class="hidemobile"><?php echo $row['Edad']; ?></td>
+   <td class="hidemobile">
+   <?php  
+
+    $DOB = $row['DOB'];
+
+  // Define la edad
+  $from = new DateTime($DOB);
+  $to   = new DateTime('today');
+  $edad = $from->diff($to)->y;
+
+   echo "$edad"
+   ?></td>
    <td class="hidemobile"><?php echo $row['Estado_Membresia']; ?></td>
    <td><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
    <td><a class="delete" href="#">delete</a></td>
