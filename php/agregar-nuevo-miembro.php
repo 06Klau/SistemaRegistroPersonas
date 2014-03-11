@@ -13,13 +13,14 @@ $estadocivil = $_POST['estadocivil'];
 $documento = $_POST['documento'];
 $numdoc = $_POST['numdoc'];
 $direccion = $_POST['direccion'];
+$fechabau = $_POST['fechabau'];
 $foto = $_POST['foto'];
 $membresia = 'Activo';
 
 
 //Insertar datos
 if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais != '' 
-	&& $genero != '' && $estadocivil != '' && $documento != '' && $numdoc != '' && $direccion != '' && $foto != '')
+	&& $genero != '' && $estadocivil != '' && $documento != '' && $numdoc != '' && $direccion != '' && $fechabau != '' && $foto != '')
 {	
 
 	$nombre = ucfirst(strtolower( $nombre ) );
@@ -27,6 +28,7 @@ if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais
 	$apellido2 = ucfirst(strtolower( $apellido2 ) );
 	$MySQLDate = date("Y-m-d");
 	$DOB = date("Y-m-d", strtotime($Date));
+	$BAU = date("Y-m-d", strtotime($fechabau));
 	$foto = $numdoc;
 
 	// Define la edad
@@ -42,9 +44,9 @@ if($nombre != '' && $apellido1 != '' && $apellido2 != '' && $Date != '' && $pais
 	}
 
 
-	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Direccion,Estado_Membresia,Fotografia)
+	mysql_query("INSERT INTO agregar_miembro (Nombre,Apellido_1,Apellido_2,DOB,Nacionalidad,Genero,Estado_Civil,Tipo_Doc,Numero_Doc,Bautismo,Direccion,Estado_Membresia,Fotografia)
 				values 
-				('$nombre','$apellido1','$apellido2','$DOB','$pais','$genero','$estadocivil','$documento','$numdoc','$direccion','$membresia','$foto')");
+				('$nombre','$apellido1','$apellido2','$DOB','$pais','$genero','$estadocivil','$documento','$numdoc','$BAU','$direccion','$membresia','$foto')");
 
 
 	header("Location: ../agregar-persona.php?message=true");

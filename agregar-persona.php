@@ -108,6 +108,10 @@ else{}
 				 <input class="clearfix rounded" type="direccion" name="direccion" id="direccion" placeholder="Dirección" required/>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				 <label class="clearfix" for='fechabau'>Fecha de Bautismo:</label>
+				 <input class="clearfix rounded" type="date" name="fechabau" id="fechabau" placeholder="DD/MM/YYYY" required/>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='foto'>Fotografía:</label>
 				 <input class="clearfix rounded" type="file" name="foto" id="foto" required/>
 				</div>

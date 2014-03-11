@@ -141,7 +141,7 @@ else{}
 				 <label class="clearfix" for='foto'>Fotografía:</label>
 				 <input class="clearfix rounded" type="file" name="foto" id="foto" value="<?php echo $rows['Fotografia']; ?>" />
 				</div>
-				<a href="update_ac.php?id=<?php echo $rows['id']; ?>"><button type="submit" name="guardar" id="guardar" class="rounded">Guardar</button></a>
+				<button type="submit" name="guardar" id="guardar" class="rounded">Guardar</button>
 				<button class="rounded limpiar" type='button'>Limpiar</button>
 			</form>
 		</div>

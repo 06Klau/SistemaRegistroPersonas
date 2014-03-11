@@ -186,18 +186,28 @@ h1{font-family: helvetica, arial; font-size: 1.375em; color: #d19800; font-weigh
 		tr:nth-child(even){
 			background-color: #f4f4f4;
 		}
+	a.see{
+		background: url(../images/see-icon.png) no-repeat;
+		display: block;
+		text-indent: -9999px;
+		height: 19px;
+		width: 19px;
+	}
 	a.edit{
 		background: url(../images/edit.png) no-repeat;
 		display: block;
 		text-indent: -9999px;
 		height: 19px;
+		width: 19px;
 	}
 	a.delete{
 		background: url(../images/delete.png) no-repeat;
 		display: block;
 		text-indent: -9999px;
 		height: 19px;
+		width: 19px;
 		text-align: center;
+		cursor: pointer; cursor: hand;
 	}
 	}
 }

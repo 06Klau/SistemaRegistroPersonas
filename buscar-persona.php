@@ -1,15 +1,25 @@
 <?php
 include("php/session.php");
+ini_set('display_errors','off');
+ini_set('display_startup_errors','off');
+error_reporting(0);
 ?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <title>Sistema de Registro de Miembros de Iglesia</title>
+	
 	<link href="stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="stylesheets/default.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	
+	<link href="stylesheets/jquery-ui-1.8.16.custom.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+
+
 </head>
 <!--[if gte IE 9]>
   <style type="text/css">
@@ -38,6 +48,21 @@ include("php/session.php");
 	<div class="container-fluid clearfix ">
 		<div class="col-xs-12 rounded content clearfix">
 			<h1>Buscar Miembro de Iglesia</h1>
+
+			<?php
+if($_GET["message"] == "true"){
+	echo '<div class="message-true">Miembro eliminado correctamente<br/></div>';
+}
+elseif ($_GET["message"] == "false") {
+  echo '<div class="message-false">Error al eliminar miembro<br/></div>';
+}
+?>
+
+<div id="dialogo" title="Eliminar Registro" style="display:none;">
+   <p>Esta Seguro de que Desea Eliminar el Registro?</p>
+  </div>
+
+
 			<div class="col-xs-12 clearfix">
 				<form id="buscar-per" name="buscar-per" method="post" action="">
 					 <label class="clearfix" for='nombre'>Escriba el Nombre y apellido  de la persona que desea buscar:</label>
@@ -66,8 +91,9 @@ include("php/session.php");
         <td class="hidemobile">Estado Civil</td>
         <td class="hidemobile">Edad</td>
         <td class="hidemobile">Estado de Membresía</td>
-        <td>Editar</td>
-        <td>Eliminar</td>
+        <td align="center">Ver</td>
+        <td align="center">Editar</td>
+        <td align="center">Eliminar</td>
         </tr>
 
 
@@ -87,7 +113,7 @@ function Conectarse(){
   }
   return $link;
 }
-
+mysql_query("SET NAMES 'utf8'");
 $con = Conectarse();
 
 $nombre = $_POST['nombre'];
@@ -118,16 +144,18 @@ if ($row = mysql_fetch_array($result)){
    echo "$edad"
    ?></td>
    <td class="hidemobile"><?php echo $row['Estado_Membresia']; ?></td>
-   <td><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
-   <td><a class="delete" href="#">delete</a></td>
+   <td align="center"><a class="see" href="ver-persona.php?id=<?php echo $row['ID']; ?>">Ver</a></td>
+   <td align="center"><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
+   <td align="center"><a id="dialogSencillo" class="delete">delete</a></td>
 
+<?php $_SESSION['id'] = $row['ID']; ?>
 <?php
 }
 while ($row = mysql_fetch_array($result)); 
    echo "</table> \n"; 
 } else { 
 
-echo '<div class="error-login">¡ No se ha encontrado ningun registro 1</div>'; 
+echo '<div class="error-login">¡ No se ha encontrado ningun registro !</div>'; 
 
 } 
 
@@ -158,5 +186,40 @@ $(document).ready(function()
 <?php
 include "php/config.php";
 ?>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// Formateamos el botón Diálogo sencillo
+	$('#dialogSencillo');
+	
+	// Damos formato a la Ventana de Diálogo	
+	$('#dialogo').dialog({
+		// Indica si la ventana se abre de forma automática
+		autoOpen: false,
+		// Indica si la ventana es modal
+		modal: true,
+		// Largo
+		width: 350,
+		// Alto
+		height: 200,
+		// Creamos los botones
+		buttons: {
+			Si: function() {
+				window.location.href="eliminar-persona.php";
+				
+			},
+			No: function() {
+				$(this).dialog( "close" );
+			}			
+		}
+	});
+	
+	// Mostrar Diálogo Sencillo
+	$('#dialogSencillo').click(function(){
+		$('#dialogo').dialog('open');
+	});
+	
+});
+</script>
 </body>
 </html>

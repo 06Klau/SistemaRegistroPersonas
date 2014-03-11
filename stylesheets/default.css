@@ -269,57 +269,69 @@ h1 {
   background-color: #f4f4f4;
 }
 /* line 189, ../sass/default.scss */
+.content table.results a.see {
+  background: url(../images/see-icon.png) no-repeat;
+  display: block;
+  text-indent: -9999px;
+  height: 19px;
+  width: 19px;
+}
+/* line 196, ../sass/default.scss */
 .content table.results a.edit {
   background: url(../images/edit.png) no-repeat;
   display: block;
   text-indent: -9999px;
   height: 19px;
+  width: 19px;
 }
-/* line 195, ../sass/default.scss */
+/* line 203, ../sass/default.scss */
 .content table.results a.delete {
   background: url(../images/delete.png) no-repeat;
   display: block;
   text-indent: -9999px;
   height: 19px;
+  width: 19px;
   text-align: center;
+  cursor: pointer;
+  cursor: hand;
 }
 
-/* line 205, ../sass/default.scss */
+/* line 215, ../sass/default.scss */
 .error-login {
   color: #ff0000;
   text-align: center;
 }
 
-/* line 210, ../sass/default.scss */
+/* line 220, ../sass/default.scss */
 .message-true {
   color: #009323;
   text-align: center;
 }
 
-/* line 215, ../sass/default.scss */
+/* line 225, ../sass/default.scss */
 .results {
   margin: 20px 0px;
 }
 
 @media (max-width: 768px) {
-  /* line 227, ../sass/default.scss */
+  /* line 237, ../sass/default.scss */
   .logo {
     margin-top: 20px;
     display: block;
   }
 
-  /* line 229, ../sass/default.scss */
+  /* line 239, ../sass/default.scss */
   .hidemobile {
     display: none !important;
   }
 
-  /* line 233, ../sass/default.scss */
+  /* line 243, ../sass/default.scss */
   .content {
     background: #fff;
     border: 1px solid #d19800;
     margin-top: 20px;
   }
-  /* line 237, ../sass/default.scss */
+  /* line 247, ../sass/default.scss */
   .content label {
     font-family: helvetica, arial;
     font-size: 14px;
@@ -331,7 +343,7 @@ h1 {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  /* line 240, ../sass/default.scss */
+  /* line 250, ../sass/default.scss */
   .content input {
     height: 43px;
     background-color: #fff;
@@ -341,7 +353,7 @@ h1 {
     float: left;
     margin-bottom: 10px;
   }
-  /* line 249, ../sass/default.scss */
+  /* line 259, ../sass/default.scss */
   .content button {
     width: 45%;
     height: 43px;
@@ -353,7 +365,7 @@ h1 {
     margin-top: 21px;
     float: right;
   }
-  /* line 260, ../sass/default.scss */
+  /* line 270, ../sass/default.scss */
   .content button.limpiar {
     background-color: #ab0c1b;
     width: 45%;
