@@ -3,6 +3,7 @@ include("php/session.php");
 ini_set('display_errors','off');
 ini_set('display_startup_errors','off');
 error_reporting(0);
+
 ?>
 
 <!doctype html>
@@ -64,7 +65,7 @@ elseif ($_GET["message"] == "false") {
 
 
 			<div class="col-xs-12 clearfix">
-				<form id="buscar-per" name="buscar-per" method="post" action="">
+				<form id="buscar-per" name="buscar-per" method="post" action="realizar-consulta.php">
 					 <label class="clearfix" for='nombre'>Escriba el Nombre y apellido  de la persona que desea buscar:</label>
            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					 <input class="clearfix rounded" type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
@@ -95,72 +96,8 @@ elseif ($_GET["message"] == "false") {
         <td align="center">Editar</td>
         <td align="center">Eliminar</td>
         </tr>
-
-
-<?php
-
-function Conectarse(){
-
-  if(!($link=mysql_connect('registromiembros.db.4684682.hostedresource.com','registromiembros','RegIASD7!')))
-  {
-    echo "Error conectando a la base de datos";
-    exit();
-  }
-  if(!mysql_select_db("registromiembros",$link))
-  {
-    echo "Error seleccionando base de datos";
-    exit();
-  }
-  return $link;
-}
-mysql_query("SET NAMES 'utf8'");
-$con = Conectarse();
-
-$nombre = $_POST['nombre'];
-$apellido1 = $_POST['apellido1'];
-$apellido2 = $_POST['apellido2'];
-
-$result = mysql_query("SELECT * FROM agregar_miembro WHERE Nombre = '".$nombre."' Or Apellido_1 = '".$apellido1."' Or Apellido_2 = '".$apellido2."' ", $con);
-
-if ($row = mysql_fetch_array($result)){
-   do { ?>
-
-   <tr>
-   <td><?php echo $row['Nombre']; ?></td>
-   <td><?php echo $row['Apellido_1']; ?></td>
-   <td class="hidemobile"><?php echo $row['Apellido_2']; ?></td>
-   <td class="hidemobile"><?php echo $row['Nacionalidad']; ?></td>
-   <td class="hidemobile"><?php echo $row['Estado_Civil']; ?></td>
-   <td class="hidemobile">
-   <?php  
-
-    $DOB = $row['DOB'];
-
-  // Define la edad
-  $from = new DateTime($DOB);
-  $to   = new DateTime('today');
-  $edad = $from->diff($to)->y;
-
-   echo "$edad"
-   ?></td>
-   <td class="hidemobile"><?php echo $row['Estado_Membresia']; ?></td>
-   <td align="center"><a class="see" href="ver-persona.php?id=<?php echo $row['ID']; ?>">Ver</a></td>
-   <td align="center"><a class="edit" href="editar-persona.php?id=<?php echo $row['ID']; ?>">update</a></td>
-   <td align="center"><a id="dialogSencillo" class="delete">delete</a></td>
-
-<?php $_SESSION['id'] = $row['ID']; ?>
-<?php
-}
-while ($row = mysql_fetch_array($result)); 
-   echo "</table> \n"; 
-} else { 
-
-echo '<div class="error-login">¡ No se ha encontrado ningun registro !</div>'; 
-
-} 
-
-
-?>				
+        
+<?php $_SESSION['id'] = $row['ID']; ?>			
 </div>
 			</div>
 		</div>

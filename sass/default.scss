@@ -11,6 +11,22 @@ background-color: rgba(255,255,255,1);
 font-size: 16px;
 }
 
+.border-image-miembro{
+	max-width: 199px;
+	max-height: 259px;
+	background: #ffecbf;
+	padding: 10px;
+	margin-top: 40px;
+	@include box-shadow(#9d9d9d 2px 2px 10px);
+
+	.imagen-miembro{
+	max-width: 179px;
+	max-height: 239;
+	img{
+		}
+	}
+}
+
 h1{font-family: helvetica, arial; font-size: 1.375em; color: #d19800; font-weight: 100; text-align: center;}
 
 .clearfix:before,

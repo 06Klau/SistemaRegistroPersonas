@@ -73,6 +73,21 @@ $rows=mysql_fetch_array($result);
 				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				 <label class="clearfix" for='fechanac'>Edad:</label>
+				<?php  
+
+    $DOB = $rows['DOB'];
+
+  // Define la edad
+  $from = new DateTime($DOB);
+  $to   = new DateTime('today');
+  $edad = $from->diff($to)->y;
+
+   echo "$edad"
+   ?>
+				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 						 <label class="clearfix" for='nacionalidad'>Nacionalidad:</label>
 					<?php echo $rows['Nacionalidad']; ?>
 				</div>
@@ -83,6 +98,10 @@ $rows=mysql_fetch_array($result);
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='estado-civil'>Estado de Membresía:</label>
 				<?php echo $rows['Estado_Membresia']; ?>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				 <label class="clearfix" for='estado-civil'>Fecha de bautismo:</label>
+				<?php echo $rows['Bautismo']; ?>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='estado-civil'>Estado Civil:</label>
@@ -102,7 +121,14 @@ $rows=mysql_fetch_array($result);
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='foto'>Fotografía:</label>
-				<?php echo $rows['Fotografia']; ?>
+				 <div class="border-image-miembro">
+					 <div class="imagen-miembro">
+					<?php
+					$var = $rows['Fotografia']; 
+					echo "<img src='uploads/$var.jpg' >";
+					?>
+					</div>
+				</div>
 				</div>
 			</form>
 		</div>

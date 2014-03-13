@@ -15,6 +15,23 @@ body {
 }
 
 /* line 14, ../sass/default.scss */
+.border-image-miembro {
+  max-width: 199px;
+  max-height: 259px;
+  background: #ffecbf;
+  padding: 10px;
+  margin-top: 40px;
+  -webkit-box-shadow: #9d9d9d 2px 2px 10px;
+  -moz-box-shadow: #9d9d9d 2px 2px 10px;
+  box-shadow: #9d9d9d 2px 2px 10px;
+}
+/* line 22, ../sass/default.scss */
+.border-image-miembro .imagen-miembro {
+  max-width: 179px;
+  max-height: 239;
+}
+
+/* line 30, ../sass/default.scss */
 h1 {
   font-family: helvetica, arial;
   font-size: 1.375em;
@@ -23,46 +40,46 @@ h1 {
   text-align: center;
 }
 
-/* line 17, ../sass/default.scss */
+/* line 33, ../sass/default.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 21, ../sass/default.scss */
+/* line 37, ../sass/default.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 24, ../sass/default.scss */
+/* line 40, ../sass/default.scss */
 .clearfix {
   zoom: 1;
   /* IE6&7*/
 }
 
-/* line 28, ../sass/default.scss */
+/* line 44, ../sass/default.scss */
 .expand {
   width: 100%;
 }
-/* line 29, ../sass/default.scss */
+/* line 45, ../sass/default.scss */
 .expand hr {
   height: 6px;
   background-color: #d19800;
 }
 
-/* line 32, ../sass/default.scss */
+/* line 48, ../sass/default.scss */
 .logo {
   margin-top: 36px;
   display: block;
 }
 
-/* line 34, ../sass/default.scss */
+/* line 50, ../sass/default.scss */
 .login {
   margin: 0 auto;
   max-width: 227px;
 }
-/* line 35, ../sass/default.scss */
+/* line 51, ../sass/default.scss */
 .login label {
   font-family: arial, helvetica;
   font-weight: 100;
@@ -71,7 +88,7 @@ h1 {
   padding: 10px 0px;
   float: left;
 }
-/* line 36, ../sass/default.scss */
+/* line 52, ../sass/default.scss */
 .login input {
   height: 43px;
   background-color: #fff;
@@ -81,7 +98,7 @@ h1 {
   padding: 10px;
   color: #666;
 }
-/* line 45, ../sass/default.scss */
+/* line 61, ../sass/default.scss */
 .login button {
   width: 135px;
   height: 43px;
@@ -93,7 +110,7 @@ h1 {
   margin-top: 21px;
   float: right;
 }
-/* line 56, ../sass/default.scss */
+/* line 72, ../sass/default.scss */
 .login a {
   font-family: helvetica, arial;
   color: #666;
@@ -102,7 +119,7 @@ h1 {
   margin-top: 5px;
 }
 
-/* line 61, ../sass/default.scss */
+/* line 77, ../sass/default.scss */
 .rounded {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -111,11 +128,11 @@ h1 {
   border-radius: 10px;
 }
 
-/* line 65, ../sass/default.scss */
+/* line 81, ../sass/default.scss */
 .navbar {
   background-color: #ffecbf;
 }
-/* line 67, ../sass/default.scss */
+/* line 83, ../sass/default.scss */
 .navbar ul {
   list-style: none;
   height: auto;
@@ -124,25 +141,25 @@ h1 {
   float: left;
   width: 100%;
 }
-/* line 74, ../sass/default.scss */
+/* line 90, ../sass/default.scss */
 .navbar ul li {
   float: left;
 }
-/* line 76, ../sass/default.scss */
+/* line 92, ../sass/default.scss */
 .navbar ul li a {
   color: #d19800;
   font-family: helvetica, arial;
   font-size: 13px;
   line-height: 34px;
 }
-/* line 81, ../sass/default.scss */
+/* line 97, ../sass/default.scss */
 .navbar ul li a img {
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* line 91, ../sass/default.scss */
+/* line 107, ../sass/default.scss */
 .content {
   background: #fff;
   border: 1px solid #d19800;
@@ -150,13 +167,13 @@ h1 {
   padding: 15px 0px;
   margin-bottom: 20px;
 }
-/* line 97, ../sass/default.scss */
+/* line 113, ../sass/default.scss */
 .content h1 {
   color: #135351;
   font-weight: bold;
   padding: 0 10px;
 }
-/* line 102, ../sass/default.scss */
+/* line 118, ../sass/default.scss */
 .content label {
   font-family: helvetica, arial;
   font-size: 14px;
@@ -168,7 +185,7 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 105, ../sass/default.scss */
+/* line 121, ../sass/default.scss */
 .content input {
   height: 43px;
   background-color: #fff;
@@ -180,23 +197,23 @@ h1 {
   font-size: 14px;
   color: #a9a9ae;
 }
-/* line 116, ../sass/default.scss */
+/* line 132, ../sass/default.scss */
 .content input.foto {
   width: 50%;
 }
-/* line 119, ../sass/default.scss */
+/* line 135, ../sass/default.scss */
 .content input.busqueda {
   width: 60%;
 }
-/* line 122, ../sass/default.scss */
+/* line 138, ../sass/default.scss */
 .content input.radiobutton {
   width: 15%;
 }
-/* line 125, ../sass/default.scss */
+/* line 141, ../sass/default.scss */
 .content label.genero {
   width: 30%;
 }
-/* line 129, ../sass/default.scss */
+/* line 145, ../sass/default.scss */
 .content .select_join {
   border: 1px solid #d19800;
   width: 100%;
@@ -209,7 +226,7 @@ h1 {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 137, ../sass/default.scss */
+/* line 153, ../sass/default.scss */
 .content .select_join select {
   background: transparent;
   width: 105%;
@@ -220,11 +237,11 @@ h1 {
   height: 41px;
   -webkit-appearance: none;
 }
-/* line 148, ../sass/default.scss */
+/* line 164, ../sass/default.scss */
 .content .select_join select:focus {
   outline: none;
 }
-/* line 152, ../sass/default.scss */
+/* line 168, ../sass/default.scss */
 .content button {
   width: 135px;
   height: 43px;
@@ -237,38 +254,38 @@ h1 {
   float: right;
   margin-right: 10px;
 }
-/* line 164, ../sass/default.scss */
+/* line 180, ../sass/default.scss */
 .content button.examinar {
   margin: 0px;
   background-color: #75ab0c;
   width: 45%;
 }
-/* line 169, ../sass/default.scss */
+/* line 185, ../sass/default.scss */
 .content button.buscar {
   margin: 0px;
   background-color: #75ab0c;
   width: 35%;
 }
-/* line 174, ../sass/default.scss */
+/* line 190, ../sass/default.scss */
 .content button.limpiar {
   background-color: #ab0c1b;
 }
-/* line 178, ../sass/default.scss */
+/* line 194, ../sass/default.scss */
 .content table.results {
   font-family: helvetica, arial;
   font-size: 0.750em;
   background-color: #ececec;
 }
-/* line 182, ../sass/default.scss */
+/* line 198, ../sass/default.scss */
 .content table.results tr.head {
   background-color: #e0e0e0;
   font-weight: bold;
 }
-/* line 186, ../sass/default.scss */
+/* line 202, ../sass/default.scss */
 .content table.results tr:nth-child(even) {
   background-color: #f4f4f4;
 }
-/* line 189, ../sass/default.scss */
+/* line 205, ../sass/default.scss */
 .content table.results a.see {
   background: url(../images/see-icon.png) no-repeat;
   display: block;
@@ -276,7 +293,7 @@ h1 {
   height: 19px;
   width: 19px;
 }
-/* line 196, ../sass/default.scss */
+/* line 212, ../sass/default.scss */
 .content table.results a.edit {
   background: url(../images/edit.png) no-repeat;
   display: block;
@@ -284,7 +301,7 @@ h1 {
   height: 19px;
   width: 19px;
 }
-/* line 203, ../sass/default.scss */
+/* line 219, ../sass/default.scss */
 .content table.results a.delete {
   background: url(../images/delete.png) no-repeat;
   display: block;
@@ -296,42 +313,42 @@ h1 {
   cursor: hand;
 }
 
-/* line 215, ../sass/default.scss */
+/* line 231, ../sass/default.scss */
 .error-login {
   color: #ff0000;
   text-align: center;
 }
 
-/* line 220, ../sass/default.scss */
+/* line 236, ../sass/default.scss */
 .message-true {
   color: #009323;
   text-align: center;
 }
 
-/* line 225, ../sass/default.scss */
+/* line 241, ../sass/default.scss */
 .results {
   margin: 20px 0px;
 }
 
 @media (max-width: 768px) {
-  /* line 237, ../sass/default.scss */
+  /* line 253, ../sass/default.scss */
   .logo {
     margin-top: 20px;
     display: block;
   }
 
-  /* line 239, ../sass/default.scss */
+  /* line 255, ../sass/default.scss */
   .hidemobile {
     display: none !important;
   }
 
-  /* line 243, ../sass/default.scss */
+  /* line 259, ../sass/default.scss */
   .content {
     background: #fff;
     border: 1px solid #d19800;
     margin-top: 20px;
   }
-  /* line 247, ../sass/default.scss */
+  /* line 263, ../sass/default.scss */
   .content label {
     font-family: helvetica, arial;
     font-size: 14px;
@@ -343,7 +360,7 @@ h1 {
     margin-top: 5px;
     margin-bottom: 5px;
   }
-  /* line 250, ../sass/default.scss */
+  /* line 266, ../sass/default.scss */
   .content input {
     height: 43px;
     background-color: #fff;
@@ -353,7 +370,7 @@ h1 {
     float: left;
     margin-bottom: 10px;
   }
-  /* line 259, ../sass/default.scss */
+  /* line 275, ../sass/default.scss */
   .content button {
     width: 45%;
     height: 43px;
@@ -365,7 +382,7 @@ h1 {
     margin-top: 21px;
     float: right;
   }
-  /* line 270, ../sass/default.scss */
+  /* line 286, ../sass/default.scss */
   .content button.limpiar {
     background-color: #ab0c1b;
     width: 45%;

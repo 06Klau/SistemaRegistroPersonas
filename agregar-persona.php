@@ -43,9 +43,15 @@ include("php/session.php");
 if($_GET["message"] == "true"){
 	echo '<div class="message-true">Miembro agregado correctamente<br/></div>';
 }
+if($_GET["message"] == "imagefalse"){
+	echo '<div class="error-login">La imágen no es válida<br/></div>';
+}
+if($_GET["message"] == "imagelimit"){
+	echo '<div class="error-login">El archivo excede el limite de peso<br/></div>';
+}
 else{}
 ?>
-			<form id="agregar-per" name="agregar-per" method="post" action="php/agregar-nuevo-miembro.php">
+			<form id="agregar-per" name="agregar-per" enctype="multipart/form-data" method="post" action="php/agregar-nuevo-miembro.php">
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='nombre'>Nombre:</label>
 				 <input class="clearfix rounded" type="nombre" name="nombre" id="nombre" placeholder="Nombre" required/>
@@ -113,7 +119,7 @@ else{}
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 				 <label class="clearfix" for='foto'>Fotografía:</label>
-				 <input class="clearfix rounded" type="file" name="foto" id="foto" required/>
+				 <input class="clearfix rounded" type="file" name="archivo" id="archivo" required/>
 				</div>
 				<button type="submit" name="guardar" id="guardar" class="rounded">Guardar</button>
 				<button class="rounded limpiar" type='button'>Limpiar</button>
